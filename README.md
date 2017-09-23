@@ -89,7 +89,7 @@ ok = amqp10_client:flow_link_credit(Receiver, 5, never),
 
 % wait for a delivery
 receive
-    {amqp10_msg, Receiver, Msg} -> ok
+    {amqp10_msg, Receiver, InMsg} -> ok
 after 2000 ->
       exit(delivery_timeout)
 end.
